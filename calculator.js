@@ -10,9 +10,6 @@ function Calculator(){
   {
     var arr = str.split(" ");
     var compare_arr = str.split('');
-    // var obj_arr = str.split(":")
-    // obj_arr[0] = obj_arr[1]
-
     console.log("String is :"+str)
     max_arr = compare_arr[0]+compare_arr[1]+compare_arr[2]
     min_arr = compare_arr[0]+compare_arr[1]+compare_arr[2]
@@ -88,7 +85,6 @@ function Calculator(){
        }
     }
 
-
     else if (arr[1] == '*'){
        this.multiplication(arr[0],arr[2])
        if(arr[3] == '+'){
@@ -101,7 +97,6 @@ function Calculator(){
         this.division(mul,arr[4])
        }
     }
-
 
     else if (arr[1] == '/'){
       this.division(arr[0],arr[2])
@@ -125,8 +120,6 @@ function Calculator(){
       this.min(compare_arr)
     }
     }
-
-
 
 }
 
