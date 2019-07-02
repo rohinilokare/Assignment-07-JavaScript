@@ -16,7 +16,7 @@ function validate() {
   myFunction();
 }
 
-	function getLable(){
+  function getLable(){
 	var lable =document.getElementById("lable").value;
     document.getElementById("countername").innerHTML = "lable";
   var color =document.getElementById("color").value;
