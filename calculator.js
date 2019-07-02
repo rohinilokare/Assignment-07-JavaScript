@@ -179,3 +179,4 @@ calculator.evaluate('kiwi + 2',{kiwi:2});
 calculator.evaluate('peaches <= 30');
 calculator.evaluate('kiwi + 2',{kiwi:2},{Kiwi:3});
 
+

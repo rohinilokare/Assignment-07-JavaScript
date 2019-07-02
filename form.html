@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>Thing Counter</title>
+    <link href="css/example.css" rel="stylesheet" type="text/css">
+    <script src="javascript/example.js" type="text/javascript"></script>
+  </head>
+<body class="body">
+
+  <form id="myForm" action="example.html" name="myForm" method="post" onsubmit = "return(validate());">
+<!--   <form id="myForm" action="example.html" name="myForm" method="post" onsubmit = "myFunvtion()">
+ -->    <div class="header">
+          <input type="submit" class="saveForm" value= 'SAVE'>
+    </div>
+    <div class="container">
+      <label for="label">lable</label>
+      <input type="text" id="label" name="lable"/>
+      <label for="color">color</label>
+      <select id="color" name="color">
+        <option value="grey" class="grey_color">grey</option>
+        <option value="pink" class="pink_color">pink</option>
+        <option value="yellow" class="yellow_color">yellow</option>
+        <option value="grey" class="green_color">green</option>
+        <option value="grey" class="red_color">red</option>
+        <option value="grey" class="white_color">white</option>
+        <option value="grey" class="black_color">black</option>
+      </select>
+    </div>
+  </form>
+
+</body>
+</html>
