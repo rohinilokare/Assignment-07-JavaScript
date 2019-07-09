@@ -1,5 +1,7 @@
 var count = 0 ;
-var label_array = [];
+var counter_array = [];
+//var counter = {initial_count:0,label:"",color:""}
+
 // function validate() {
 // 	console.log("in validate")
 //   if( document.myForm.label.value == "" ) {
@@ -20,47 +22,55 @@ function showform(){
 document.getElementById("myForm").style.display="block";
 }
 
+
+function counter_array_fun(label,color){
+   counter = {initial_count:0,label,color}
+  counter_array.push(counter);
+  console.log(counter_array)
+}
+
 function submitForm(){
-    //document.getElementById("f1").submit();
     console.log('in get label');
-    var label =document.getElementById("label").value ;
+    var label =document.getElementById("label").value;
     var color =document.getElementById("color").value;
-    label_array_fun(label,color);
-    //document.getElementById("countername").innerHTML = label ;
-    //document.getElementById("myForm").style.display="none"
-      display_button();
+    counter_array_fun(label,color);
+    document.getElementById("myForm").style.display="none"
+    display_button();
     refreshForm();
 }
 
-function label_array_fun(label,color){
-  var counter = {label,color}
-  label_array.push(counter);
-  console.log(label_array)
-
-}
-
 function display_button(){
-var length = label_array.length
-    for(var i=0;i<length;i++){
-     var btn = document.createElement("BUTTON");
-     btn.innerHTML = '    <div class="button_group"><button id=counter_minus onclick="return(decrement());"><span class = "minus"> - </span></button><button id="countername">' +label_array[i].label +'</button><button id="countervalue">0</button><button onclick="return(increment());"> <span class = "plus"> + </span></button></div>'
-      document.body.appendChild(btn);
+  var length = counter_array.length
+  var btn = document.createElement("BUTTON");
+  var br = document.createElement("br");
+  for(var i=0;i<length;i++){
+     btn.innerHTML = '<div class="button_group"> '+
+     '<button id=counter_minus onclick="return(decrement('+i+'));" style="background-color:'+counter_array[i].color+'">'+
+     '<span class = "minus"> - </span></button>'+
+     '<button id="countername" style="background-color:'+counter_array[i].color+'">Label'+i+ ':' +counter_array[i].label +'</button>'+
+     '<button id="'+i+'" style="background-color:'+counter_array[i].color+'">'+counter_array[i].initial_count +'</button>'+
+     '<button style="background-color:'+counter_array[i].color+'" onclick="return(increment('+i+'));">'+
+     ' <span class = "plus"> + </span>'+
+     '</button>'+
+     '</div>';
+
+    document.body.appendChild(btn);
+    document.body.appendChild(br);
   }
 }
 
 function refreshForm(){
-    document.getElementById("label").value = '';
-    document.getElementById("color").value = '';
+  document.getElementById("label").value = '';
+  document.getElementById("color").value = '#000000';
 }
 
-function increment(){
-	count = count + 1;
-	document.getElementById("countervalue").innerHTML = count;
-  //document.getElementById("countername").innerHTML = "label"
+function increment(index){
+  count = counter_array[index].initial_count ++ ;
+  document.getElementById(index).innerHTML = count;
 }
 
-function decrement(){
-	count = count -1;
-	document.getElementById("countervalue").innerHTML = count;
+function decrement(index){
+  count = counter_array[index].initial_count --;
+  document.getElementById(index).innerHTML = count;
 }
 
