@@ -1,35 +1,31 @@
 var count = 0 ;
 var counter_array = [];
-//var counter = {initial_count:0,label:"",color:""}
 
-// function validate() {
-// 	console.log("in validate")
-//   if( document.myForm.label.value == "" ) {
-//      alert( "Please provide your label!" );
-//      document.myForm.label.focus() ;
-//      return false;
-//   }
-//   if( document.myForm.color.value == "" ) {
-//      alert( "Please provide your color!" );
-//      document.myForm.color.focus() ;
-//      return false;
-//   }
-//   getlabel();
-//   // return( true );
-// }
-
-function showform(){
-document.getElementById("myForm").style.display="block";
+function validate() {
+  console.log("in validate")
+  if( document.getElementById("label").value == "" ) {
+     alert( "Please provide your label!" );
+     return false;
+  }
+  if( document.getElementById("color").value == "" ) {
+     alert( "Please provide your color!" );
+     return false;
+  }
+  return( true );
 }
 
+function showform(){
+  document.getElementById("myForm").style.display="block";
+}
 
 function counter_array_fun(label,color){
-   counter = {initial_count:0,label,color}
+  counter = {initial_count:0,label,color}
   counter_array.push(counter);
   console.log(counter_array)
 }
 
 function submitForm(){
+  if(validate()){
     console.log('in get label');
     var label =document.getElementById("label").value;
     var color =document.getElementById("color").value;
@@ -37,6 +33,7 @@ function submitForm(){
     document.getElementById("myForm").style.display="none"
     display_button();
     refreshForm();
+  }
 }
 
 function display_button(){

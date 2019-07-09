@@ -31,7 +31,6 @@
   cursor: pointer;
   float: left;
   left : 50px;
-/*  margin :10px;*/
 }
 .plus{
   height: 11px;
@@ -105,10 +104,3 @@ input[type=color], select {
 }
 
 
-'<div class="button_group"> '+
-     '<button id=counter_minus onclick="return(decrement('+i+'));" style="background-color:'+counter_array[i].color+'">'+
-     '<span class = "minus"> - </span>'+
-     '</button><button id="countername" style="background-color:'+counter_array[i].color+'">Label:' +counter_array[i].label +'</button><button id="'+i+'" style="background-color:'+counter_array[i].color+'">'+counter_array[i].initial_count +'</button><button style="background-color:'+counter_array[i].color+'" onclick="return(increment('+i+'));"> <span class = "plus"> + </span></button></div>';
-
-
-'<div class="button_group"><button id=counter_minus onclick="return(decrement('+i+'));" style="background-color:'+counter_array[i].color+'"><span class = "minus"> - </span></button><button id="countername" style="background-color:'+counter_array[i].color+'">Label:' +counter_array[i].label +'</button><button id="'+i+'" style="background-color:'+counter_array[i].color+'">'+counter_array[i].initial_count +'</button><button style="background-color:'+counter_array[i].color+'" onclick="return(increment('+i+'));"> <span class = "plus"> + </span></button></div>';
