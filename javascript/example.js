@@ -2,51 +2,48 @@ var count = 0 ;
 var counter_array = [];
 
 function validate() {
-  console.log("in validate")
   if( document.getElementById("label").value == "" ) {
-     alert( "Please provide your label!" );
+     alert("Please provide your label!");
      return false;
   }
   if( document.getElementById("color").value == "" ) {
-     alert( "Please provide your color!" );
+     alert("Please provide your color!");
      return false;
   }
-  return( true );
+  return true ;
 }
 
-function showform(){
-  document.getElementById("myForm").style.display="block";
+function showForm(){
+  document.getElementById("my_form").style.display="block";
 }
 
-function counter_array_fun(label,color){
+function counterArrayFun(label,color){
   counter = {initial_count:0,label,color}
   counter_array.push(counter);
-  console.log(counter_array)
 }
 
 function submitForm(){
   if(validate()){
-    console.log('in get label');
     var label =document.getElementById("label").value;
     var color =document.getElementById("color").value;
-    counter_array_fun(label,color);
-    document.getElementById("myForm").style.display="none"
-    display_button();
+    counterArrayFun(label,color);
+    document.getElementById("my_form").style.display="none"
+    displayCounter();
     refreshForm();
   }
 }
 
-function display_button(){
+function displayCounter(){
   var length = counter_array.length
-  var btn = document.createElement("BUTTON");
+  var btn = document.createElement("button");
   var br = document.createElement("br");
-  for(var i=0;i<length;i++){
+  for(var counter_no=0;counter_no<length;counter_no++){
      btn.innerHTML = '<div class="button_group"> '+
-     '<button id=counter_minus onclick="return(decrement('+i+'));" style="background-color:'+counter_array[i].color+'">'+
+     '<button id=counter_minus onclick="return(decrement('+counter_no+'));" style="background-color:'+counter_array[counter_no].color+'">'+
      '<span class = "minus"> - </span></button>'+
-     '<button id="countername" style="background-color:'+counter_array[i].color+'">Label'+i+ ':' +counter_array[i].label +'</button>'+
-     '<button id="'+i+'" style="background-color:'+counter_array[i].color+'">'+counter_array[i].initial_count +'</button>'+
-     '<button style="background-color:'+counter_array[i].color+'" onclick="return(increment('+i+'));">'+
+     '<button id="countername" style="background-color:'+counter_array[counter_no].color+'">Label '+counter_no+ ':' +counter_array[counter_no].label +'</button>'+
+     '<button id="'+counter_no+'" style="background-color:'+counter_array[counter_no].color+'">'+counter_array[counter_no].initial_count +'</button>'+
+     '<button style="background-color:'+counter_array[counter_no].color+'" onclick="return(increment('+counter_no+'));">'+
      ' <span class = "plus"> + </span>'+
      '</button>'+
      '</div>';
