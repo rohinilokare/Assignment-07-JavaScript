@@ -1,4 +1,5 @@
-.body{
+.body
+{
   background-color : #555050 ;
   margin: 0px;
 }
@@ -11,18 +12,21 @@
   color: lightgrey;
   display: block;
 }
-.top_content{
+.top_content
+{
   position: absolute;
-  height : 15% ;
+  height : 15%;
   color: white;
-  margin-left : 10%;
-  margin-top: 1%;
-  left :15px;
+  margin-top:2%;
+  left :300px;
 }
-.whole_body{
+.whole_body
+{
   position: relative;
   text-align: center;
-}.button_group button {
+}
+.button_group button
+{
   text-align: center;
   background-color: #4CAF50;
   border: none;
@@ -57,7 +61,7 @@
   content: "";
   clear: both;
 }
-.plus_button_bottom
+.add_counter_button
 {
 	position: absolute;
   height: 40px;
@@ -70,9 +74,9 @@
   font-size: 37px;
   color:white;
   bottom: 10%;
-  display:inline-block;
 }
-.saveForm{
+.save_form
+{
   position: absolute;
   right: 200px;
   top:20px;
@@ -81,12 +85,15 @@
   font-size: 20px;
   color :white;
 }
-div.container {
+div.container
+{
   border-radius: 5px;
-  background-color: #555050;
+  background-color: white;
   padding: 20px;
+  display: none;
 }
-input[type=text], select {
+input[type=text], select
+{
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -95,12 +102,11 @@ input[type=text], select {
   border-radius: 4px;
   box-sizing: border-box;
 }
-input[type=color], select {
+input[type=color], select
+{
   width: 100%;
   height:40px;
 }
-.space-for-buttons{
-  margin-bottom: 10px;
-}
+
 
 
